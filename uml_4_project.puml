@@ -1,0 +1,105 @@
+@startuml
+class bagrut.project.dogreader.MainActivity2 {
+- PieChartView pie_chart
+- {static} DBHandler dbHandler
+# void onCreate(Bundle)
+- void set_chart()
+}
+
+
+class bagrut.project.dogreader.PieChartView {
+- PieChart pieChart
+- void init(Context)
++ void setData(Map<String,Integer>)
++ Bitmap getBitmap()
+}
+
+
+class bagrut.project.dogreader.MainActivity {
++ void onCreate(Bundle)
+}
+
+class bagrut.project.dogreader.BitmapHelper {
++ {static} float[][][] bitmapToFloatMatrix(Bitmap)
++ {static} int maxIndex(float[])
++ {static} Bitmap resizeBitmap2(Bitmap,int,int)
+}
+
+class bagrut.project.dogreader.MainActivity3 {
+- {static} int CAMERA_REQUEST
+- {static} int GALLERY_REQUEST
+- ImageView imageView
+- TextView textView
++ void onCreate(Bundle)
+- void showPictureDialog()
+- void predictAndshow(Bitmap)
+# void onActivityResult(int,int,Intent)
+}
+
+
+class bagrut.project.dogreader.DataProccesing {
+- Bitmap show
+- Context context
++ boolean modelworked
++ boolean dog_in_the_pic
++ Bitmap getshow()
+- void filter_background()
+}
+
+
+class bagrut.project.dogreader.ContinuousCaptureActivity {
+- PreviewView previewView
+- ImageView imageView
+- TextView textView
+- Button captureButton
+- ExecutorService cameraExecutor
+- ImageCapture imageCapture
+- {static} int PERMISSIONS_REQUEST_CODE
+- String[] REQUIRED_PERMISSIONS
+# void onCreate(Bundle)
+- boolean allPermissionsGranted()
++ void onRequestPermissionsResult(int,String[],int[])
+- void startCamera()
+- void captureAndAnalyzeImage()
+- void analyzeImage(Bitmap)
+- Bitmap imageToBitmap(ImageProxy)
+# void onDestroy()
+- Bitmap processBitmap(Bitmap)
+}
+
+
+class bagrut.project.dogreader.DBHandler {
+- {static} int DATABASE_VERSION
+- {static} String DATABASE_NAME
+- {static} String TABLE_NAME
+- {static} String COLUMN_NAME
++ void onCreate(SQLiteDatabase)
++ void onUpgrade(SQLiteDatabase,int,int)
++ void addData(String)
++ Cursor getData()
++ void deleteAllData()
++ int count(String)
+}
+
+
+class bagrut.project.dogreader.Pets_Emotion_Clc_Model {
+- Context context
+- {static} String[] classes
+- int index_class
+- boolean dog_in_pic
++ Bitmap image
+- void predict(Bitmap)
++ String get_class()
++ int getIndex_class()
+}
+
+
+
+
+android.app.Activity <|-- bagrut.project.dogreader.MainActivity2
+android.widget.LinearLayout <|-- bagrut.project.dogreader.PieChartView
+android.app.Activity <|-- bagrut.project.dogreader.MainActivity
+android.app.Activity <|-- bagrut.project.dogreader.MainActivity3
+androidx.appcompat.app.AppCompatActivity <|-- bagrut.project.dogreader.ContinuousCaptureActivity
+android.database.sqlite.SQLiteOpenHelper <|-- bagrut.project.dogreader.DBHandler
+@enduml
