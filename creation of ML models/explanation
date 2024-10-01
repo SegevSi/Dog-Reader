@@ -12,6 +12,6 @@ This project focuses on **dog emotion classification** and **dog semantic segmen
    - The model was trained using the **Oxford-IIIT Pet Dataset** and was optimized for use on mobile devices. 
    - The output of this model is used to make  the background of images of dogs  black , leaving only the dog pixels for emotion classification, ensuring the classification model focuses on the dog rather than its surroundings.
    - the model classify 3 classes for each pixle : 0 : the pixle represent the dog , 1 : the pixle represent the background , 2: the pixle represent the border between the dog and the background .
-
+   - https://www.tensorflow.org/tutorials/images/segmentation?hl=he
 Both models were trained in **Python** and exported as **TensorFlow Lite models** to be integrated into an Android application for real-time inference of dog emotions. 
 cant add the files semantic_segmentation_4_pets.keras , pets_emotion_clc_vgg16_finetuned2.keras because they are to big .
