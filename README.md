@@ -37,7 +37,7 @@ This Android application identifies and classifies emotions of dogs in images us
   
   ### 4. Continuous Capture (ContinuousCaptureActivity)
   - Allows continuous photo capture of dogs for real-time emotion analysis.
-  - Each captured image is immediately analyzed, and the emotion is displayed on the screen.
+  - Each captured image is immediately analyzed, and the emotion is displayed on the screen with the filtered image.
 
   
 
