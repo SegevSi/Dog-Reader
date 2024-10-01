@@ -14,4 +14,4 @@ This project focuses on **dog emotion classification** and **dog semantic segmen
    - the model classify 3 classes for each pixle : 0 : the pixle represent the dog , 1 : the pixle represent the background , 2: the pixle represent the border between the dog and the background .
 
 Both models were trained in **Python** and exported as **TensorFlow Lite models** to be integrated into an Android application for real-time inference of dog emotions. 
-
+cant add the files semantic_segmentation_4_pets.keras , pets_emotion_clc_vgg16_finetuned2.keras because they are to big .
