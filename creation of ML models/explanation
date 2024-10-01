@@ -1,0 +1,17 @@
+
+This project focuses on **dog emotion classification** and **dog semantic segmentation** using deep learning models. It consists of two  models:
+
+1. **Pets Emotion Classification Model**:
+   - This model classifies dog emotions into four categories: 0 : Angry, 1 : Happy, 2: Relaxed, 3 : Sad. 
+   - The architecture is based on the pre-trained **VGG16** model, which has been fine-tuned with additional custom layers to improve classification accuracy.
+   - The data used for training and testing is preprocessed by get the background of the images black withe the pet segmentation model,using augmentation techniques like rotation, shift, zoom, and flip to generalize the model across different types of dog images. The model was further optimized and converted into a **TensorFlow Lite** format for mobile deployment.
+   - the dataset  is from here: **https://www.kaggle.com/datasets/devzohaib/dog-emotions-prediction** and angry 2 is the angry class from this dataset **https://www.kaggle.com/datasets/danielshanbalico/dog-emotion**:
+
+2. **Pets Sementic Segmentation Model**:
+   - This model segments pets (dogs) from the background using a U-Net architecture with **MobileNetV2** as the backbone. It performs pixel-wise segmentation to distinguish between the dog and the background.
+   - The model was trained using the **Oxford-IIIT Pet Dataset** and was optimized for use on mobile devices. 
+   - The output of this model is used to make  the background of images of dogs  black , leaving only the dog pixels for emotion classification, ensuring the classification model focuses on the dog rather than its surroundings.
+   - the model classify 3 classes for each pixle : 0 : the pixle represent the dog , 1 : the pixle represent the background , 2: the pixle represent the border between the dog and the background .
+
+Both models were trained in **Python** and exported as **TensorFlow Lite models** to be integrated into an Android application for real-time inference of dog emotions. 
+
